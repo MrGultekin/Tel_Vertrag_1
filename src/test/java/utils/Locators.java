@@ -26,6 +26,39 @@ public class Locators {
     public static final By newsletterEmailRegistrationButton= By.cssSelector("button[class$='button']");
     public static final By newsletterEmailUnRegistrationLink= By.xpath("//a[@title='Newsletter wieder abmelden']");
 
+    //Kabel product container 8 pieces
+    public static final By KabelProductPrices = By.cssSelector(".plan_box_price_once_btn");
+    public static final By goTocartButton = By.cssSelector(".once_btn");
+    public static final By extraTalkCheckBoxes = By.cssSelector("div[class$='custom-control']");// 3 pieces
+    public static final By jetztBestellenBtn= By.xpath("//a[@class='checkout-btn']");
+
+    //Personal Infos Locators
+    public static final By salutionSelect = By.xpath("//label[text()='Anrede']/following-sibling::select");
+    public static final By titleSelect = By.xpath("//label[text()='Titel']/following-sibling::select");
+    public static final By nameInput = By.xpath("//label[text()='Vorname']/following-sibling::input");
+    public static final By surnameInput = By.xpath("//label[text()='Nachname']/following-sibling::input");
+    public static final By telephonInput = By.xpath("//label[text()='Telefon']//following-sibling::input");
+    public static final By emailInput = By.xpath("//label[text()='E-Mail']//following-sibling::input");
+    public static final By postCodeInput = By.xpath("//label[text()='PLZ']//following-sibling::input");
+    public static final By cityInput = By.xpath("//label[text()='Wohnort']//following-sibling::input");
+    public static final By streetInput = By.xpath("//label[text()='Strasse']//following-sibling::input");
+    public static final By houseNumberInput = By.xpath("//label[text()='Hausnummer']//following-sibling::input");
+    public static final By idTypeInput = By.xpath("//label[text()='Ausweisart']//following-sibling::select");
+    public static final By idPlaceOfIssueInput = By.xpath("//label[text()='Ausstellungsort']//following-sibling::input");
+    public static final By dateOfBirthInput = By.xpath("//label[text()='Geburtsdatum']//following-sibling::input");
+    public static final By birthOfPlaceInput = By.xpath("//label[text()='Geburtsort']//following-sibling::input");
+    public static final By expiryDateInput = By.xpath("//label[text()='Gültigkeit']//following-sibling::input");
+    public static final By idNumberInput = By.xpath("(//label[text()='Ausweisnummer']/following::input)[1]");
+    public static final By accountOwnerInput = By.xpath("//label[text()='Kontoinhaber']//following-sibling::input");
+    public static final By bankNameInput = By.xpath("//label[text()='Bank Name']//following-sibling::input");
+    public static final By bicNumberInput = By.xpath("//label[text()='BIC']//following-sibling::input");
+    public static final By shippingRadioInput = By.xpath("//label[@for='versandart_1']/preceding-sibling::input");
+    public static final By jetztBestellenWeiterBtn= By.xpath("//a[@class='checkout-btn']");
+
+
+
+
+
 
 
 
