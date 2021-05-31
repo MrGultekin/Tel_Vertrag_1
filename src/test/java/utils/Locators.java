@@ -1,5 +1,6 @@
 package utils;
 
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 public class Locators {
@@ -23,14 +24,15 @@ public class Locators {
 
     // Newsletter input
     public static final By newsletterEmailRegistrationInput = By.xpath("//input[@type='email']");
-    public static final By newsletterEmailRegistrationButton= By.cssSelector("button[class$='button']");
-    public static final By newsletterEmailUnRegistrationLink= By.xpath("//a[@title='Newsletter wieder abmelden']");
+    public static final By newsletterEmailRegistrationButton = By.cssSelector("button[class$='button']");
+    public static final By newsletterEmailUnRegistrationLink = By.xpath("//a[@title='Newsletter wieder abmelden']");
 
     //Kabel product container 8 pieces
-    public static final By KabelProductPrices = By.cssSelector(".plan_box_price_once_btn");
+    public static final By kabelProductPrices = By.cssSelector(".plan_box_price_once_btn");
     public static final By goTocartButton = By.cssSelector(".once_btn");
     public static final By extraTalkCheckBoxes = By.cssSelector("div[class$='custom-control']");// 3 pieces
-    public static final By jetztBestellenBtn= By.xpath("//a[@class='checkout-btn']");
+    public static final By jetztBestellenBtn = By.xpath("//a[@class='checkout-btn']");
+    public static final By cableLinkMenu = By.xpath("//ul//a[@title='Kabel']");
 
     //Personal Infos Locators
     public static final By salutionSelect = By.xpath("//label[text()='Anrede']/following-sibling::select");
@@ -53,13 +55,11 @@ public class Locators {
     public static final By bankNameInput = By.xpath("//label[text()='Bank Name']//following-sibling::input");
     public static final By bicNumberInput = By.xpath("//label[text()='BIC']//following-sibling::input");
     public static final By shippingRadioInput = By.xpath("//label[@for='versandart_1']/preceding-sibling::input");
-    public static final By jetztBestellenWeiterBtn= By.xpath("//a[@class='checkout-btn']");
+    public static final By jetztBestellenWeiterBtn = By.xpath("//a[@class='checkout-btn']");
 
+// price box
 
-
-
-
-
+    public static final By priceBox = By.cssSelector(".pricing");
 
 
 }

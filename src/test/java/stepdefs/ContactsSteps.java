@@ -27,7 +27,11 @@ public class ContactsSteps {
     @And("user accept cookies")
     public void userAcceptCookies() {
         $(cookieAcceptButton).shouldBe(Condition.visible).click();
-    }
+
+        
+
+        }
+
 
     @When("user fills the form as follow")
     public void userFillsTheFormAsFollow(DataTable dataTable) {
