@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 public class Locators {
     public static final String url = "https://telefonvertrag.de";
-    String email = "testuser@tutusmedia.com";
+   // String email = "testuser@tutusmedia.com";
 
 
     public static final By contactFooterLink = By.xpath("//footer//a[text()='Kontakt & Support']");
@@ -26,6 +26,9 @@ public class Locators {
     public static final By newsletterEmailRegistrationInput = By.xpath("//input[@type='email']");
     public static final By newsletterEmailRegistrationButton = By.cssSelector("button[class$='button']");
     public static final By newsletterEmailUnRegistrationLink = By.xpath("//a[@title='Newsletter wieder abmelden']");
+    public static final By newsletterEmailUnRegistrationInput = By.cssSelector("input[placeholder='Deine E-Mail Adresse']");
+    public static final By jetzAnmeldenMailButton = By.cssSelector(".newsletter-send-button");
+
 
     //Kabel product container 8 pieces
     public static final By kabelProductPrices = By.cssSelector(".plan_box_price_once_btn");

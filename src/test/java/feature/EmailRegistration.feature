@@ -4,8 +4,8 @@ Feature: User should be able to subscribe himself in newslener
 
     Given user on homepage
     And user accept cookies
-    And user subscribes newsletter as "testuser@tutusmedia.com"
-    Then user unsubscribes from newsletter
+    And user subscribes newsletter as "testeruser@tutusmedia.com"
+    Then user unsubscribes from newsletter as "testeruser@tutusmedia.com"
 
 
 

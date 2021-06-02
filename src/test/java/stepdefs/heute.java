@@ -17,7 +17,7 @@ public class heute {
 
         $(".search-box input").shouldBe(Condition.visible).setValue("Tag");
         $(".search-box ul li",2).shouldBe(Condition.exist).scrollTo().click();
-        //sleep(5000);
+        sleep(10000);
     }
 
 }
