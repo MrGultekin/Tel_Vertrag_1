@@ -26,7 +26,9 @@ public class ContactsSteps {
 
     @And("user accept cookies")
     public void userAcceptCookies() {
-        $(cookieAcceptButton).shouldBe(Condition.visible).click();
+        sleep(1000);
+        if ($(cookieAcceptButton).isDisplayed())
+        $(cookieAcceptButton).click();
 
         
 

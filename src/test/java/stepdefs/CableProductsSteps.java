@@ -3,9 +3,7 @@ package stepdefs;
 import static com.codeborne.selenide.Selenide.*;
 import static utils.Locators.*;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
@@ -14,6 +12,10 @@ import java.util.Map;
 public class CableProductsSteps {
     @And("user navigates to Cable page")
     public void userNavigatesToCablePage() {
+        if($(toggleMobileMenu).isDisplayed()){
+            $(toggleMobileMenu).click();
+            $(kabel_mainMobile).click();
+        }else
         $(cableLinkMenu).shouldBe(Condition.visible).click();
     }
 
@@ -45,7 +47,7 @@ public class CableProductsSteps {
         SelenideElement extra = extras.get(index - 1);
         extra.click();
 
-        $(priceBox).shouldHave(Condition.text(extra.parent().find("h4 span").getText()));
+        $(priceBox).shouldHave(Condition.text(extra.parent().find("h4").getText()));
         $(jetztBestellenBtn).click();
 
 
@@ -55,14 +57,19 @@ public class CableProductsSteps {
     public void userFillsPersonalInfosPage(DataTable dataTable) {
 
         Map<String, String> persInfForm = dataTable.asMap(String.class, String.class);
-        if (persInfForm.get("anrede") != null)
+        if (persInfForm.get("anrede") == null)
             $(genderSelect).shouldBe(Condition.visible).selectOption("Herr");
+        else
+            $(genderSelect).shouldBe(Condition.visible).selectOption(persInfForm.get("anrede"));
 
-        if (persInfForm.get("anrede") != null)
-            $(titleSelect).shouldBe(Condition.visible).selectOption("Dr.");
+        if (persInfForm.get("titel") != null)
+            $(titleSelect).shouldBe(Condition.visible).selectOption(persInfForm.get("titel"));
+
 
         if (persInfForm.get("vorname") != null)
             $(nameInput).shouldBe(Condition.visible).setValue(persInfForm.get("vorname"));
+
+
         if (persInfForm.get("nachname") != null)
             $(surnameInput).shouldBe(Condition.visible).setValue(persInfForm.get("nachname"));
         if (persInfForm.get("telefon") != null)
@@ -77,7 +84,7 @@ public class CableProductsSteps {
             $(streetInput).shouldBe(Condition.visible).setValue(persInfForm.get("strasse"));
         if (persInfForm.get("hausnummer") != null)
             $(houseNumberInput).scrollTo().shouldBe(Condition.visible).setValue(persInfForm.get("hausnummer"));
-sleep(2000);
+        sleep(2000);
 
     }
 
@@ -104,7 +111,7 @@ sleep(2000);
     @Then("user fills Bank Infos")
     public void userFillsBankInfos(DataTable dataTable) {
         Map<String, String> bankForm = dataTable.asMap(String.class, String.class);
-        if (bankForm.get("IBAN")!=null)
+        if (bankForm.get("IBAN") != null)
             $(ibanInput).shouldBe(Condition.exist).scrollTo().setValue(bankForm.get("IBAN"));
         sleep(2000);
 
@@ -112,6 +119,18 @@ sleep(2000);
         $(jetztBestellenWeiterBtn).click();
 
         sleep(5000);
+
+    }
+
+    @Given("browser size as {string}")
+    public void browserSizeAs(String browserSize) {
+        Configuration.browserSize =browserSize;
+
+    }
+
+    @And("close the browser")
+    public void closeTheBrowser() {
+        WebDriverRunner.driver().close();
 
     }
 }
