@@ -28,11 +28,10 @@ public class ContactsSteps {
     public void userAcceptCookies() {
         sleep(1000);
         if ($(cookieAcceptButton).isDisplayed())
-        $(cookieAcceptButton).click();
+            $(cookieAcceptButton).click();
 
-        
 
-        }
+    }
 
 
     @When("user fills the form as follow")

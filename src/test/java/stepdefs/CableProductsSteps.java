@@ -84,7 +84,7 @@ public class CableProductsSteps {
             $(streetInput).shouldBe(Condition.visible).setValue(persInfForm.get("strasse"));
         if (persInfForm.get("hausnummer") != null)
             $(houseNumberInput).scrollTo().shouldBe(Condition.visible).setValue(persInfForm.get("hausnummer"));
-        sleep(2000);
+
 
     }
 
@@ -103,7 +103,7 @@ public class CableProductsSteps {
             $(expiryDateInput).setValue(idForm.get("Gültigkeit"));
         if (idForm.get("Ausweisnummer") != null)
             $(idNumberInput).setValue(idForm.get("Ausweisnummer"));
-        sleep(2000);
+
 
 
     }
@@ -113,12 +113,12 @@ public class CableProductsSteps {
         Map<String, String> bankForm = dataTable.asMap(String.class, String.class);
         if (bankForm.get("IBAN") != null)
             $(ibanInput).shouldBe(Condition.exist).scrollTo().setValue(bankForm.get("IBAN"));
-        sleep(2000);
+
 
         $(shippingRadioInput).scrollTo().shouldBe(Condition.exist).click();
         $(jetztBestellenWeiterBtn).click();
 
-        sleep(5000);
+
 
     }
 
